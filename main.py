@@ -23,4 +23,10 @@ async def create_user(user: Villagers):
     ret = db.users.insert_one(user.dict(by_alias=True))
     user.id = ret.inserted_id
     return {'user': user}
+@app.get('/details')
+async def list_users():
+    users = []
+    for user in db.users.find():
+        users.append(User(**user))
+    return {'users': users}
 
