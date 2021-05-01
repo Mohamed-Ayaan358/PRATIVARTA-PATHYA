@@ -1,6 +1,6 @@
 function villagers(){
-	var mail=document.getElementbyId("email").value
-	var pass=document.getElementbyId("pass").value
+	var mail=document.getElementById("email").value
+	var pass=document.getElementById("pass").value
 	axios({
 		method: 'post',
 		url: 'https://localhost:8000/details',
