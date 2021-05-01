@@ -10,7 +10,5 @@ function villagers(){
 		}
 	}).then(response => {
 		var store=response.data
-		var firstdiv= document.getElementById("created")
-		firstdiv.innerHTML= store
 	})
 }
