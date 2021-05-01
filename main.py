@@ -21,7 +21,7 @@ class villagers(BaseModel):
    email : str
    password : str
 
-@pp.get('/home')
+@pp.post('/home')
 def signup(villagers:villagers):
 	enc=jsonable_encoder(villagers)
 	v_name=enc['email']
