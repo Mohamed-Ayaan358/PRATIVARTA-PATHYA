@@ -1,11 +1,16 @@
-function tog(){
-  document.getElementById('ngo').classList.toggle("a")
+function villagers(){
+	var email=document.getElementbyId("email").value
+	var pass=document.getElementbyId("pass").value
+	axios({
+		method: 'post',
+		url: 'https://localhost:8000/',
+		data: {
+			id : email,
+			password : pass,
+		}
+	}).then(response => {
+		var store=response.data
+		var firstdiv= document.getElementById("created")
+		firstdiv.innerHTML= store
+	})
 }
-let ngo=document.querySelector("#ngo");
-let home=document.querySelector("#home"); 
-ngo.addEventListener("click", ()=>{
-  this.classList.toggle("active");
-})
-home.addEventListener("click",()=>{
-  this.classList.toggle("active");
-})
