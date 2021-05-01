@@ -1,11 +1,11 @@
 function villagers(){
-	var email=document.getElementbyId("email").value
+	var mail=document.getElementbyId("email").value
 	var pass=document.getElementbyId("pass").value
 	axios({
 		method: 'post',
 		url: 'https://localhost:8000/details',
 		data: {
-			id : email,
+			email : mail,
 			password : pass,
 		}
 	}).then(response => {
