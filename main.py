@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
 import json
-from mongo import db, Villagers
+#from mongo import db, Villagers
 
 pp=FastAPI()
 
@@ -16,17 +16,33 @@ pp.add_middleware(
     allow_headers=['*'],
 )
 
-@pp.post('/users')
-async def create_user(user: Villagers):
-    if hasattr(user, 'id'):
-        delattr(user, 'id')
-    ret = db.users.insert_one(user.dict(by_alias=True))
-    user.id = ret.inserted_id
-    return {'user': user}
-@pp.get('/details')
-async def list_users():
-    users = []
-    for user in db.users.find():
-        users.append(User(**user))
-    return {'users': users}
+#@pp.post("/", response_description="Add new user", response_model=Villagers)
+#async def create_user(user: Villagers): #= Body(...)):
+  #  user = jsonable_encoder(student)
+   # new_user = await db["students"].insert_one(student)
+   # created_user = await db["students"].find_one({"_id": new_user.inserted_id})
+   # return JSONResponse(status_code=status.HTTP_201_CREATED, content=created_user)
+#@pp.get("/listusers", response_description="List all users", response_model=list[Villagers])
+#async def list_users():
+#    users = await db["students"].find().to_list(1000)
+#    return users
 
+class Villagers(BaseModel):
+    email: str
+    password: str
+@pp.post('/details')
+def det(det:Villagers):
+    enc=jsonable_encoder(det)
+    mail=enc['email']
+    passw=enc['password']
+    d={
+        "email":mail,
+        "password":passw,
+    }
+    print("i m in")
+    f=open("villagers.txt",'a')
+    #f=open('D:/Downloads/details.txt','a')
+    f.write(f'{mail},{str(passw)} \n')
+    f.close
+
+    return 'hello your data has been noted'   
