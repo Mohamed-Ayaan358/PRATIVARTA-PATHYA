@@ -23,7 +23,7 @@ class villagers(BaseModel):
 
 @pp.get('/home',response_class=HTMLResponse)
 def signup(villagers:villagers):
-	enc=jsonable_encoder(det)
+	enc=jsonable_encoder(villagers)
 	v_name=enc['email']
 	password=enc['password']
 	d={
