@@ -19,12 +19,12 @@ pp.add_middleware(
 #@pp.post("/", response_description="Add new user", response_model=Villagers)
 #async def create_user(user: Villagers): #= Body(...)):
   #  user = jsonable_encoder(student)
-   # new_user = await db["students"].insert_one(student)
-   # created_user = await db["students"].find_one({"_id": new_user.inserted_id})
+   # new_user = await db["users"].insert_one(student)
+   # created_user = await db["users"].find_one({"_id": new_user.inserted_id})
    # return JSONResponse(status_code=status.HTTP_201_CREATED, content=created_user)
 #@pp.get("/listusers", response_description="List all users", response_model=list[Villagers])
 #async def list_users():
-#    users = await db["students"].find().to_list(1000)
+#    users = await db["users"].find().to_list(1000)
 #    return users
 
 class Villagers(BaseModel):
