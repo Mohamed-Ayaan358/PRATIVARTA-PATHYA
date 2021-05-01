@@ -1,70 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
-    <style type="text/css"> 
-    body{
-     background-image:url("https://live.staticflickr.com/65535/48763548953_e0bc133af7_o.jpg");
-     color: #FFFFFF;
-    }
-    #Head{ 
-      font-family:Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-      font-size: 40px;
-      margin:0;
-      text-align: center;
-    }
-    #info{
-      background-color:#778899;
-      font-family:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
-      font-size:20px;
-    }
-    #instructions{
-    background-color:#778899;
-    font-family:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
-    font-size:20px;
-    }
-   </style>
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="4c77064b-b465-4695-bad9-1d6b7a537692";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+      body {
+    background-image: url("https://live.staticflickr.com/65535/48763548953_e0bc133af7_o.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+}
+
+#Head {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+}
+
+#info {
+    background-color: #778899;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    font-size: 20px;
+}
+
+#instructions {
+    background-color: #778899;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    font-size: 20px;
+}
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">PRATIVARTA PATHYA</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active" id="home" onclick="tog()"><a href="#">Home</a></li>
-        <li id="ngo" ><a href="#">NGO</a></li>
-        <li id="connect"><a href="#">Connect</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> 
-  <h2 style="color:darkgreen"id="Head" >PRATIVARTA PATHYA</h2>
-    <hr/>
-  <article style="color:darkgreen"id="info" class="">ग्रामीणों के नेटवर्क में आपका स्वागत है !!<br/>यह वेबऐप उन संगठनों से जुड़कर विलगर्स की मदद करने के लिए बनाया गया था जो उनकी मदद करना चाहते हैं और उन्हें अधिक प्रत्यक्ष तरीके से सरकार से जोड़ते हैं ।
-  </article>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <article style="color:darkgreen;"id="instructions"> 1. हमारे द्वारा काम करने वाले संगठनों के बारे में अधिक जानकारी प्राप्त करने के लिए [एनजीओ] बटन पर क्लिक करें और वे आपकी मदद कैसे कर सकते हैं<br/>
-2. मुख्य पृष्ठ पर नेविगेट करने के लिए [होम] बटन पर क्लिक करें जहां आप हमारी पहल के बारे में सभी सामान्य जानकारी पा सकते हैं<br/>
-3. हमारे अधिकारियों के साथ संवाद करने और अपनी चिंताओं को स्पष्ट करने के लिए [कनेक्ट] बटन दबाएं
-</article>    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">PRATIVARTA PATHYA</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active" id="home"><a href="./index.html">Home</a></li>
+                    <li id="ngo"><a href="./logpage.html">NGO</a></li>
+                    <li id="connect"><a href="#">Connect</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h2 style="color:darkgreen" id="Head">PRATIVARTA PATHYA</h2>
+    <hr />
+    <article style="color:darkgreen" id="info" class="">ग्रामीणों के नेटवर्क में आपका स्वागत है !!<br />यह वेबऐप उन संगठनों से जुड़कर विलगर्स की मदद करने के लिए बनाया गया था जो उनकी मदद करना चाहते हैं और उन्हें अधिक प्रत्यक्ष तरीके से सरकार से जोड़ते हैं ।
+    </article>
+    <br />
+    <br />
+    <br />
+    <br />
+    <article style="color:darkgreen;" id="instructions"> 1. हमारे द्वारा काम करने वाले संगठनों के बारे में अधिक जानकारी प्राप्त करने के लिए [एनजीओ] बटन पर क्लिक करें और वे आपकी मदद कैसे कर सकते हैं<br />
+        2. मुख्य पृष्ठ पर नेविगेट करने के लिए [होम] बटन पर क्लिक करें जहां आप हमारी पहल के बारे में सभी सामान्य जानकारी पा सकते हैं<br />
+        3. हमारे अधिकारियों के साथ संवाद करने और अपनी चिंताओं को स्पष्ट करने के लिए [कनेक्ट] बटन दबाएं
+    </article>
 </body>
-</html>
+  
+  </html>
