@@ -2,7 +2,6 @@
     background-image: url("https://live.staticflickr.com/65535/48763548953_e0bc133af7_o.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    color: #FFFFFF;
 }
 
 #Head {
@@ -54,7 +53,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 button {
-  background-color: #FFA07A;
+  background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
