@@ -3,7 +3,7 @@ function villagers(){
 	var pass=document.getElementbyId("pass").value
 	axios({
 		method: 'post',
-		url: 'https://localhost:8000/',
+		url: 'https://localhost:8000/details',
 		data: {
 			id : email,
 			password : pass,
