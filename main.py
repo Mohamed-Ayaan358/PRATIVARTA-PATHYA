@@ -2,10 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
-import random
-from datetime import datetime
 import json
-from fastapi.responses import HTMLResponse
+from mongo import db, Villagers
 
 pp=FastAPI()
 
@@ -17,18 +15,12 @@ pp.add_middleware(
     allow_methods=['*'],
     allow_headers=['*'],
 )
-class villagers(BaseModel):
-   email : str
-   password : str
 
-@pp.post('/home')
-def signup(villagers:villagers):
-	enc=jsonable_encoder(villagers)
-	v_name=enc['email']
-	password=enc['password']
-	d={
-	    "email":v_name,
-	    "password":password,
-    }
-	return 'hello '+v_name+'you have been registered,go to the Login page to Login'
+@app.post('/users')
+async def create_user(user: Villagers):
+    if hasattr(user, 'id'):
+        delattr(user, 'id')
+    ret = db.users.insert_one(user.dict(by_alias=True))
+    user.id = ret.inserted_id
+    return {'user': user}
 
