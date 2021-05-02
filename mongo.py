@@ -28,7 +28,6 @@ class Villagers(BaseModel):
     id: Optional[PyObjectId] = Field(alias='_id')
     emailid: str
     password: str
-
     class Config:
         arbitrary_types_allowed = True
         json_encoders = {
